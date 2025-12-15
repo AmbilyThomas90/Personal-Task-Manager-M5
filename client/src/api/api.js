@@ -1,8 +1,8 @@
 import axios from "axios";
 // Base URL for all backend API requests
 // Change this when deploying to production
-const API_URL = "https://personal-task-manager-n26d.onrender.com/api";
-
+//const API_URL = "https://personal-task-manager-n26d.onrender.com/api";
+const API_URL = "http://localhost:5000/api";
 // Register a new user
 // Sends user data (name, email, password) to backend
 

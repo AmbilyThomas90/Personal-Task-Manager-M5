@@ -18,8 +18,9 @@ export default function Dashboard({ token }) {
   }, []);
 
   return (
- <div className="max-w-md mx-auto p-6 bg-gradient-to-r from-blue-100 via-indigo-100 to-purple-100 rounded-xl shadow-lg">
-      <h1 className="text-2xl font-bold text-center mb-4">
+<div className="max-w-md mx-auto p-6 bg-slate-500 text-indigo-200 rounded-xl shadow-lg">
+  <h1 className="text-2xl font-bold text-center mb-4 text-pink-300">
+
          {userName
           ? `Welcome, ${userName} 👋`
           : "Welcome to Your Personal Task Manager"}

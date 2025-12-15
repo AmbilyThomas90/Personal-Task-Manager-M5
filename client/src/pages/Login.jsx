@@ -3,10 +3,10 @@ import { useNavigate, Link } from "react-router-dom";
 import { loginUser } from "../api/api";
 
 export default function Login({ setToken }) {
-    // Local state for email and password input fields
+  // Local state for email and password input fields
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  
+
   // React Router hook for programmatic navigation
   const navigate = useNavigate();
 
@@ -14,13 +14,13 @@ export default function Login({ setToken }) {
   const submit = async (e) => {
     e.preventDefault();
     try {
-        // Call login API with email and password
+      // Call login API with email and password
       const res = await loginUser({ email, password });
 
       //  Destructure token & name
       const { token, name } = res.data;
-console.log( name);
-      
+      console.log(name);
+
       // Store token and name in localStorage for persistence
       localStorage.setItem("token", token);
       localStorage.setItem("name", name);
@@ -33,7 +33,11 @@ console.log( name);
   };
 
   return (
-    <form onSubmit={submit} className="flex flex-col gap-3">
+    <form
+      onSubmit={submit}
+      className="flex flex-col gap-3 bg-green-200 p-6 rounded-xl shadow-md"
+    >
+
       {/*  Welcome Message */}
       <h2 className="text-2xl font-bold text-center mb-4">
         Welcome to Your Personal Task Manager
@@ -44,7 +48,7 @@ console.log( name);
         placeholder="Email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        className="border p-2 rounded"
+        className="border p-2 rounded w-64 mx-auto block"
         required
       />
 
@@ -53,11 +57,11 @@ console.log( name);
         placeholder="Password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
-        className="border p-2 rounded"
+        className="border p-2 rounded w-64 mx-auto block"
         required
       />
 
-      <button className="bg-blue-500 text-white p-2 rounded">
+      <button className="bg-blue-500 text-white p-2 rounded  w-64 mx-auto block">
         Login
       </button>
 
